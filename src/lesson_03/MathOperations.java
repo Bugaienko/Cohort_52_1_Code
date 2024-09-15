@@ -46,7 +46,7 @@ public class MathOperations {
         2. Сложение вычитание
          */
         result = (1 + 2) * 2;
-        System.out.println("result  1 + 2 * 2 : " + result);
+        System.out.println("result  (1 + 2) * 2 : " + result);
 
         // Целочисленное деление /
         // 20 / 7 -> 2 целые и остаток 6; -> 20 - 7 -> 13 - 7 -> 6
