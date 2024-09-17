@@ -24,6 +24,7 @@ public class ScannerExample {
 
         System.out.println("Введите ваш рост в см");
         double height = scanner.nextDouble();
+        scanner.nextLine();
 
 
         System.out.println("name: " + name);

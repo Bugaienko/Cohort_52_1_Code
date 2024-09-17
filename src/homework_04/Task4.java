@@ -39,7 +39,6 @@ public class Task4 {
 //        ch5 = 'A';
 
 
-        // Todo разобраться почему выводит то коды, то символы
         System.out.println("" + ch1 + ch2 + ch3 + ch4 + ch5);
 
     }
