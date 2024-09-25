@@ -8,11 +8,10 @@ import java.util.Arrays;
  */
 
 /*
+
 Task 2
 Написать метод, принимающий на вход массив строк.
 Метод должен вернуть массив, состоящий из самой короткой и самой длинной строки изначального массива.
-
-
  */
 
 public class Task2 {
@@ -52,6 +51,8 @@ public class Task2 {
     } // Methods area
 
     public static String[] getArrayWithSmallestString(String[] strings) {
+
+
 
         if (strings == null || strings.length == 0) {
             return new String[0]; // []

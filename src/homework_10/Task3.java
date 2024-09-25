@@ -55,7 +55,7 @@ public class Task3 {
         if (number <= 1) return false;
 
         int count = 0;
-        for (int i = 2; i < Math.sqrt(number); i++) {
+        for (int i = 2;  i <=Math.sqrt(number); i++) {
             count++;
             if (number % i == 0) return false;
         }
@@ -74,7 +74,7 @@ public class Task3 {
         int count = 2;
 
 
-        for (int i = 5; i  <= Math.sqrt(number); i += 6) {
+        for (int i = 5; i * i <= number; i += 6) {
             count++;
             if (number % i == 0 || number % (i + 2) == 0) return false;
         }
