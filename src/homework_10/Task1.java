@@ -87,9 +87,16 @@ public class Task1 {
 
     public static void printArray(int[] array) {
         for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + ", ");
+            System.out.print(array[i] + ((i != array.length - 1) ? ", " : "]\n"));
+
+//            if (i != array.length - 1) {
+//                System.out.print(", ");
+//            } else {
+//                System.out.println("]");
+//            }
+
         }
-        System.out.println();
+//        System.out.println();
     }
 
 
