@@ -12,6 +12,10 @@ public class TestArray {
 
         System.out.println(magicArray.toString());
 
+        int[] array = new int[10];
+        array[0] = 100;
+        array[1] = 200;
+
         magicArray.add(100);
         magicArray.add(200);
         magicArray.add(300);

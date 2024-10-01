@@ -81,7 +81,7 @@ public class MagicArray {
 
     // Возвращает значение по индексу
     int get(int index) {
-        if (index >=0 && index < cursor) {
+        if (index >= 0 && index < cursor) {
             return array[index];
         }
         // Написать код, если индекс "не корректный"

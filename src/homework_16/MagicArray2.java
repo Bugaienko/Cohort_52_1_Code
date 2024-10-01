@@ -34,7 +34,6 @@ public class MagicArray2 {
         for (int i = 0; i < numbers.length; i++) {
             add(numbers[i]);
         }
-
     }
 
 
