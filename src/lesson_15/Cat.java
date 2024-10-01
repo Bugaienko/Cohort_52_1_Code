@@ -6,9 +6,9 @@ package lesson_15;
  */
 
 public class Cat {
-    String name;
-    String color;
-    int age;
+    public String name;
+    public String color;
+    public int age;
 
     // Конструктор класса
     // Специальный тип метода.
@@ -36,14 +36,14 @@ public class Cat {
     }
 
     public Cat(String name, String color, int age) {
-        this(name, color); // вызов другого конструктора, должен быть первой строкой исполняемого кода
+//        this(name, color); // вызов другого конструктора, должен быть первой строкой исполняемого кода
         // Вызываю конструктор класса, принимающий две стринги.
         // Соответсвующее поля будут проинициализированы
         // Ключевое слово this может быть использована для вызова других конструкторов класса
         // или для передачи текущего объекта в качестве параметра метода (разберем позже)
 
-//        this.name = name;
-//        this.color = color;
+        this.name = name;
+        this.color = color;
         this.age = age;
     }
 
