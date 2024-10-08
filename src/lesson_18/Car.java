@@ -37,4 +37,27 @@ public class Car {
     public void setPowerPS(int powerPS) {
         this.powerPS = powerPS;
     }
+
+    // final в параметрах метода
+    public void test(final int number) {
+        // Нельзя изменить значение, т.к. в параметрах метода переменная помечена как final
+        //number++;
+        int x = number + 10;
+        x++;
+    }
+
+    public void test(final int[] numbers) {
+        // нельзя присвоить новую ссылку
+        // numbers = new int[100];
+
+        // Можем использовать эту ссылку
+        int[] newNumbers = numbers;
+
+        // Можем изменять состояние объекта
+        numbers[0] = 10000;
+
+    }
+
+
+
 }

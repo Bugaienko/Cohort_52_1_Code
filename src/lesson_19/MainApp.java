@@ -20,9 +20,19 @@ public class MainApp {
         // car = new Car("VW", 350);
         // car = null;
 
-        // Но состояние объекта я менять могу
+        // Но состояние объекта я могу изменить
         car.setPowerPS(800);
         System.out.println(car.toString());
+
+        System.out.println(FinalDemo.PI);
+        // Изменить значение константы не может ни один объект класса
+        // FinalDemo.PI = 10.0;
+
+        System.out.println(FinalDemo.COUNTRY.toUpperCase());
+        System.out.println("Country: " + FinalDemo.COUNTRY);
+
+        System.out.println("\n ================ \n");
+        System.out.println("finalDemo.getPiX(): " + finalDemo.getPiX());
 
 
     }
