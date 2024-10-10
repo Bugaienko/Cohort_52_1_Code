@@ -33,6 +33,22 @@ public class AutoPark {
         busDriver.setName("Sebastian");
         System.out.println(bus.toString());
 
+        System.out.println("\n============================");
+        System.out.println("количество пассажиров в автобусе: " + bus.getCountPassenger());
+        bus.showListOfPassengers();
+
+        Passenger passenger = new Passenger("John");
+        Passenger margo = new Passenger("Margo");
+
+        bus.takePassenger(passenger);
+        bus.showListOfPassengers();
+        System.out.println("===============");
+        bus.takePassenger(margo);
+        bus.showListOfPassengers();
+        System.out.println("===============");
+        bus.takePassenger(margo);
+        bus.showListOfPassengers();
+
 
 
 
