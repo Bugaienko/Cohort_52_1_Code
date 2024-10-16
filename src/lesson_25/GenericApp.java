@@ -25,6 +25,7 @@ public class GenericApp {
         // Т.е. мы можем использовать только ссылочные типы данных
 
        // GenericBox<int> box = new GenericBox<int>(15);
+        GenericBox<Integer> box = new GenericBox<>(10);
 
 
 
