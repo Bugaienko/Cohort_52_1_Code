@@ -12,6 +12,9 @@ public class ArrayTesting {
 
         MyArrayList<Integer> numbers = new MyArrayList<>();
 
+        MyArrayList<Double> doubles = new MyArrayList<>();
+
+
         numbers.add(1, 2, 3, 4, 5, 6);
 
         System.out.println(numbers);

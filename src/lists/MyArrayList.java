@@ -12,6 +12,8 @@ public class MyArrayList <T> {
     @SuppressWarnings("unchecked") // Подавляю предупреждение компилятора о непроверяемом приведении типа
     public MyArrayList() {
         array = (T[]) new Object[10];
+
+
     }
 
     @SuppressWarnings("unchecked")
@@ -26,6 +28,7 @@ public class MyArrayList <T> {
 
     // Добавление в массив одного элемента
     public void add(T value) {
+
 
         // Проверка. Есть ли вообще свободное место во внутреннем массиве
         // Если места нет - нужно добавить место
