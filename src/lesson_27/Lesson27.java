@@ -2,6 +2,8 @@ package lesson_27;
 
 import lists.MyArrayList;
 
+import java.util.Arrays;
+
 /**
  * @author Sergey Bugaenko
  * {@code @date} 18.10.2024
@@ -27,6 +29,25 @@ public class Lesson27 {
 
         integers.set(idx, -200);
         System.out.println(integers);
+
+        System.out.println("contains 500: " + integers.contains(500));
+        System.out.println("contains 55: " + integers.contains(55));
+
+        Integer value = integers.get(50);
+        System.out.println("value: " + value);
+        value = integers.get(3);
+        System.out.println("value: " + value);
+
+        System.out.println("\n ======================= \n");
+        System.out.println(integers.remove(3));
+        System.out.println(integers);
+        System.out.println(integers.remove(Integer.valueOf(500)));
+        System.out.println(integers);
+
+        System.out.println("\n ===================== \n");
+
+        Integer[] array = integers.toArray();
+        System.out.println(Arrays.toString(array));
 
 
 
