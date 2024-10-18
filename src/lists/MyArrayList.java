@@ -93,6 +93,7 @@ public class MyArrayList<T> implements MyList<T> {
     }
 
     // Возвращает значение по индексу
+    @Override
     public T get(int index) {
         if (index >= 0 && index < cursor) {
             return array[index];
@@ -129,6 +130,21 @@ public class MyArrayList<T> implements MyList<T> {
         }
     }
 
+    // Удаление элемента по значению
+    @Override
+    public boolean remove(T value) {
+        /*
+        1. Есть ли элемент с таким значение в массиве - indexOf
+        2. Если элемента нет - вернуть false
+        3. Если элемент есть - удалить и вернуть true - вызвать удаление по индексу
+         */
+        int index = indexOf(value);
+        if (index == -1) return false;
+
+        remove(index);
+        return true;
+    }
+
     @Override
     public boolean contains(T value) {
         // 3 >= 0 -> true (элемент найден) | -1 >= 0 -> false (не содержится)
@@ -145,7 +161,23 @@ public class MyArrayList<T> implements MyList<T> {
 //        }
     }
 
+    // Перезаписывает значение по указанному индексу
+    @Override
+    public void set(int index, T value) {
+        if (index >= 0 && index < cursor) {
+            // Если индекс "правильный" присваиваем новое значение
+            array[index] = value;
+        }
+        // Если нет, ничего не делаем
 
+    }
+
+    // Является ли коллекция пустой
+    @Override
+    public boolean isEmpty() {
+        // Если курсор равен 0 - значит у нас нет элементов во внутреннем массиве
+        return cursor == 0;
+    }
 
     // Поиск по значению. Первое вхождение
     // {1, 100, 5, 5, 100} -> 100 метод вернет индекс первого найдено вхождения = 1
@@ -172,21 +204,22 @@ public class MyArrayList<T> implements MyList<T> {
         return -1;
     }
 
-    // Удаление элемента по значению
-    public boolean removeByValue(T value) {
+    @Override
+    public T[] toArray() {
         /*
-        1. Есть ли элемент с таким значение в массиве - indexOf
-        2. Если элемента нет - вернуть false
-        3. Если элемент есть - удалить и вернуть true - вызвать удаление по индексу
+        1. Создать новый массив размерностью cursor
+        2. Пройтись по нашему Внутреннему массиву и скопировать все элементы в новый массив
+        3. Вернуть ссылку на новый массив
          */
-        int index = indexOf(value);
-        if (index == -1) return false;
 
-        remove(index);
-        return true;
+
+        T[] result = (T[]) new Object[cursor];
+        for (int i = 0; i < result.length; i++) {
+            result[i] = array[i];
+        }
+
+        return result;
     }
-
-
 }
 
 /*

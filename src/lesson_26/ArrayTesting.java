@@ -21,7 +21,7 @@ public class ArrayTesting {
 
         System.out.println(numbers.indexOf(4));
 
-        System.out.println(numbers.removeByValue(5));
+        System.out.println(numbers.remove(5));
         System.out.println(numbers);
 
         MyArrayList<String> strings = new MyArrayList<>();
@@ -29,8 +29,8 @@ public class ArrayTesting {
         strings.addAll("Python", "JS", "Scala", "Kotlin");
         System.out.println(strings);
 
-        System.out.println(strings.removeByValue("Basic"));
-        System.out.println(strings.removeByValue("Scala"));
+        System.out.println(strings.remove("Basic"));
+        System.out.println(strings.remove("Scala"));
         System.out.println(strings);
     }
 }
