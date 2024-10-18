@@ -49,6 +49,13 @@ public class Lesson27 {
         Integer[] array = integers.toArray();
         System.out.println(Arrays.toString(array));
 
+        System.out.println("\n ================== \n");
+
+        MyArrayList<String> strings = new MyArrayList<>();
+        strings.add("Hello");
+        String[] strArray = strings.toArray();
+        System.out.println("link: " + Arrays.toString(strArray));
+
 
 
     }

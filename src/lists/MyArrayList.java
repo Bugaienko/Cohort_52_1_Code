@@ -1,5 +1,7 @@
 package lists;
 
+import java.lang.reflect.Array;
+
 /**
  * @author Sergey Bugaenko
  * {@code @date} 01.10.2024
@@ -204,6 +206,8 @@ public class MyArrayList<T> implements MyList<T> {
         return -1;
     }
 
+    // Вернуть наш магический массив в виде обычного массива
+    @SuppressWarnings("unchecked")
     @Override
     public T[] toArray() {
         /*
@@ -213,12 +217,32 @@ public class MyArrayList<T> implements MyList<T> {
          */
 
 
-        T[] result = (T[]) new Object[cursor];
+        // Взять какой-то объект из моего массива и узнать на стадии выполнение программы тип этого объекта.
+        // И потом могу создать массив этого типа данных
+
+        if (cursor == 0) return null;
+        // if (cursor == 0) return (T[]) new Object[0]; // ошибка в RunTime
+
+        Class<T> clazz = (Class<T>) array[0].getClass();
+//        System.out.println("clazz = " + clazz);
+
+        // Создаю массив того же типа, как и 0-й элемент
+        T[] result = (T[]) Array.newInstance(clazz, cursor);
+
         for (int i = 0; i < result.length; i++) {
             result[i] = array[i];
         }
 
         return result;
+
+
+//          Этот код вызывает ошибку
+//        T[] result = (T[]) new Object[cursor];
+//        for (int i = 0; i < result.length; i++) {
+//            result[i] = array[i];
+//        }
+
+
     }
 }
 
