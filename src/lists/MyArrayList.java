@@ -5,15 +5,13 @@ package lists;
  * {@code @date} 01.10.2024
  */
 
-public class MyArrayList <T> {
+public class MyArrayList<T> implements MyList<T> {
     private T[] array;
     private int cursor; // присвоено значение по умолчанию = 0;
 
     @SuppressWarnings("unchecked") // Подавляю предупреждение компилятора о непроверяемом приведении типа
     public MyArrayList() {
         array = (T[]) new Object[10];
-
-
     }
 
     @SuppressWarnings("unchecked")
@@ -22,7 +20,7 @@ public class MyArrayList <T> {
             this.array = (T[]) new Object[10];
         } else {
             this.array = (T[]) new Object[array.length * 2];
-            add(array);
+            addAll(array);
         }
     }
 
@@ -41,8 +39,8 @@ public class MyArrayList <T> {
         cursor++;
     }
 
-
-    public void add(T... numbers) {
+    @Override
+    public void addAll(T... numbers) {
         // с numbers я могу обращаться точно также, как со ссылкой на массив int
         // System.out.println("Приняли несколько интов. А именно: " + numbers.length);
         // System.out.println("Есть индекс у каждого инта, как в массиве. По индексом 0: " + numbers[0]);
@@ -88,6 +86,7 @@ public class MyArrayList <T> {
         return result;
     }
 
+
     // Текущее количество элементов в массиве
     public int size() {
         return cursor;
@@ -130,6 +129,24 @@ public class MyArrayList <T> {
         }
     }
 
+    @Override
+    public boolean contains(T value) {
+        // 3 >= 0 -> true (элемент найден) | -1 >= 0 -> false (не содержится)
+        return indexOf(value) >= 0;
+
+//        int index = indexOf(value);
+//        if (index >= 0) {
+//            // Индекс, который вернулся больше нуля - элемент найден
+//            return true;
+//        }
+//        else {
+//            // index меньше нуля (минус 1), значит такое значение не найдено = не содержится в нашем массиве
+//            return false;
+//        }
+    }
+
+
+
     // Поиск по значению. Первое вхождение
     // {1, 100, 5, 5, 100} -> 100 метод вернет индекс первого найдено вхождения = 1
     public int indexOf(T value) {
@@ -148,7 +165,7 @@ public class MyArrayList <T> {
 
         for (int i = cursor - 1; i >= 0; i--) {
             if (array[i].equals(value)) {
-               return i;
+                return i;
             }
         }
 
@@ -168,7 +185,6 @@ public class MyArrayList <T> {
         remove(index);
         return true;
     }
-
 
 
 }
