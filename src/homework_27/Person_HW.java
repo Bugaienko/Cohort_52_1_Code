@@ -11,7 +11,7 @@ public class Person_HW {
 
     public Person_HW(String email, String password) {
         setEmail(email);
-        this.password = password;
+        setPassword(password);
     }
 
     public String getEmail() {
@@ -22,6 +22,16 @@ public class Person_HW {
 
         if (isEmailValid(email)) {
             this.email = email;
+        }
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        if (isPasswordValid(password)) {
+            this.password = password;
         }
     }
 
@@ -95,12 +105,37 @@ public class Person_HW {
     }
 
 
-    public String getPassword() {
-        return password;
-    }
 
-    public void setPassword(String password) {
-        this.password = password;
+
+    private boolean isPasswordValid(String password) {
+        if (password == null || password.length() < 8) return false;
+
+        boolean isDigit = false;
+        boolean isUpperCase = false;
+        boolean isLowerCase = false;
+        boolean isSpecialSymbol = false;
+
+        // альтернативный способ объявление переменных
+        boolean[] result = new boolean[4]; // false, false, false, false
+
+        String symbols = "!%$@&*()[].,-";
+
+        // Перебираю символы
+        for (int i = 0; i < password.length(); i++) {
+            char ch = password.charAt(i);
+
+            if (Character.isDigit(ch)) isDigit = true; // res[0] = true
+            if (Character.isUpperCase(ch)) isUpperCase = true; // res[1] = true
+            if (Character.isLowerCase(ch)) isLowerCase = true; //  res[2] = true
+            if (symbols.indexOf(ch) >= 0) isSpecialSymbol = true;
+            // if (symbols.contains(String.valueOf(ch))) isSpecialSymbol = true;
+
+            // Если хотя бы в одной переменной останется значение false, то весь пароль НЕ будет признан валидным = (признан не валидным)
+            return isDigit && isUpperCase && isLowerCase && isSpecialSymbol;
+        }
+
+
+        return false;
     }
 
     @Override
