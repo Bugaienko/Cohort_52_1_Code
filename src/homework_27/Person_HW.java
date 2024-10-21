@@ -108,7 +108,10 @@ public class Person_HW {
 
 
     private boolean isPasswordValid(String password) {
-        if (password == null || password.length() < 8) return false;
+        if (password == null || password.length() < 8) {
+            System.out.println("Password should be at least 8 characters");
+            return false;
+        }
 
         boolean isDigit = false;
         boolean isUpperCase = false;
@@ -130,12 +133,13 @@ public class Person_HW {
             if (symbols.indexOf(ch) >= 0) isSpecialSymbol = true;
             // if (symbols.contains(String.valueOf(ch))) isSpecialSymbol = true;
 
-            // Если хотя бы в одной переменной останется значение false, то весь пароль НЕ будет признан валидным = (признан не валидным)
-            return isDigit && isUpperCase && isLowerCase && isSpecialSymbol;
         }
 
+        System.out.printf("%s | %s | %s | %s\n", isDigit, isUpperCase, isLowerCase, isSpecialSymbol);
 
-        return false;
+        // Если хотя бы в одной переменной останется значение false, то весь пароль НЕ будет признан валидным = (признан не валидным)
+        return isDigit && isUpperCase && isLowerCase && isSpecialSymbol;
+
     }
 
     @Override
