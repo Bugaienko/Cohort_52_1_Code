@@ -42,6 +42,16 @@ public class ForEachExample {
             System.out.println(s);
         }
 
+        // Цикл for-each НЕ должен изменять состояние коллекции (добавлять или удалять элементы)
+        for (String s : list){
+            if (s.equals("World")){
+//                list.remove(s);
+                list.add("JS");
+            }
+        }
+
+        System.out.println(list);
+
 
 
     }

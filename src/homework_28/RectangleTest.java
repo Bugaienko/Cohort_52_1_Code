@@ -6,7 +6,7 @@ import lists.MyList;
 
 public class RectangleTest {
     public static void main(String[] args) {
-        MyArrayList<Rectangle> rectangles = new MyArrayList<>();
+        MyList<Rectangle> rectangles = new MyArrayList<>();
 
         rectangles.add(new Rectangle(5.0, 3.0));
         rectangles.add(new Rectangle(4.0, 2.0));
