@@ -30,7 +30,7 @@ public class Rectangle {
         if (!(o instanceof Rectangle)) return false;
         Rectangle rectangle = (Rectangle) o;
 
-        return Double.compare(width, rectangle.width) == 0 && Double.compare(height, rectangle.height) == 0;
+        return width == rectangle.width && Double.compare(height, rectangle.height) == 0;
     }
 
     @Override

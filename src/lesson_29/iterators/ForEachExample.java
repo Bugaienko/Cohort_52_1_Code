@@ -13,7 +13,7 @@ import java.util.Iterator;
 public class ForEachExample {
     public static void main(String[] args) {
 
-        MyArrayList<String> list = new MyArrayList<>();
+        MyList<String> list = new MyArrayList<>();
 
         list.add("Hello");
         list.add("World");
@@ -38,20 +38,19 @@ public class ForEachExample {
             // Действия с переменной
         }
          */
-        for (String s : list){
+        for (String s : list) {
             System.out.println(s);
         }
 
         // Цикл for-each НЕ должен изменять состояние коллекции (добавлять или удалять элементы)
-        for (String s : list){
-            if (s.equals("World")){
+        for (String s : list) {
+            if (s.equals("World")) {
 //                list.remove(s);
                 list.add("JS");
             }
         }
 
         System.out.println(list);
-
 
 
     }
