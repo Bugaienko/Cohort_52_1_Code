@@ -135,7 +135,7 @@ public class Person {
 
         }
 
-        System.out.printf("%s | %s | %s | %s\n", isDigit, isUpperCase, isLowerCase, isSpecialSymbol);
+        // System.out.printf("%s | %s | %s | %s\n", isDigit, isUpperCase, isLowerCase, isSpecialSymbol);
 
         // Если хотя бы в одной переменной останется значение false, то весь пароль НЕ будет признан валидным = (признан не валидным)
         return isDigit && isUpperCase && isLowerCase && isSpecialSymbol;
