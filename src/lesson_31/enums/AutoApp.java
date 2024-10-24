@@ -38,6 +38,27 @@ public class AutoApp {
         int ordinal = Color.GREEN.ordinal();
         System.out.println("ordinal: " + ordinal);
 
+        System.out.println(auto);
+        // Enum безопасно сравнивать на равенство оператором ==
+        if (auto.getColor() == Color.GREEN) {
+            System.out.println("Цвет авто зеленый");
+        } else {
+            System.out.println("Не зеленый");
+        }
+
+        System.out.println("\n ========= switch ==========");
+        // Очень часто используется в switch
+        switch (color) {
+            case RED:
+                System.out.println("Красный");
+                break;
+            case GREEN:
+                System.out.println("Зеленый");
+                break;
+            default:
+                System.out.println("Какой-то другой");
+        }
+
 
     }
 }
