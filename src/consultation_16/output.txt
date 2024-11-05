@@ -1,0 +1,82 @@
+Car {model='BMW', year=2000, speed=190}
+Car {model='Citroen', year=2018, speed=190}
+Car {model='Ferrari', year=2020, speed=330}
+Car {model='Alfa', year=2021, speed=120}
+Car {model='VW', year=2021, speed=250}
+Car {model='Ferrari', year=2024, speed=300}
+====================
+
+Car {model='BMW', year=2000, speed=190}
+Car {model='Citroen', year=2018, speed=190}
+Car {model='Ferrari', year=2020, speed=330}
+Car {model='Alfa', year=2021, speed=120}
+Car {model='VW', year=2021, speed=250}
+Car {model='Ferrari', year=2024, speed=300}
+====================
+
+Car {model='Ferrari', year=2024, speed=300}
+Car {model='Alfa', year=2021, speed=120}
+Car {model='VW', year=2021, speed=250}
+Car {model='Ferrari', year=2020, speed=330}
+Car {model='Citroen', year=2018, speed=190}
+Car {model='BMW', year=2000, speed=190}
+====================
+
+Car {model='Alfa', year=2021, speed=120}
+Car {model='BMW', year=2000, speed=190}
+Car {model='Citroen', year=2018, speed=190}
+Car {model='Ferrari', year=2024, speed=300}
+Car {model='Ferrari', year=2020, speed=330}
+Car {model='VW', year=2021, speed=250}
+====================
+
+Car {model='VW', year=2021, speed=250}
+Car {model='Ferrari', year=2024, speed=300}
+Car {model='Ferrari', year=2020, speed=330}
+Car {model='Citroen', year=2018, speed=190}
+Car {model='BMW', year=2000, speed=190}
+Car {model='Alfa', year=2021, speed=120}
+====================
+
+Car {model='Alfa', year=2021, speed=120}
+Car {model='BMW', year=2000, speed=190}
+Car {model='Citroen', year=2018, speed=190}
+Car {model='Ferrari', year=2020, speed=330}
+Car {model='Ferrari', year=2024, speed=300}
+Car {model='VW', year=2021, speed=250}
+====================
+
+Car {model='Alfa', year=2021, speed=120}
+Car {model='BMW', year=2000, speed=190}
+Car {model='Citroen', year=2018, speed=190}
+Car {model='Ferrari', year=2024, speed=300}
+Car {model='Ferrari', year=2020, speed=330}
+Car {model='VW', year=2021, speed=250}
+====================
+
+Car {model='BMW', year=2000, speed=190}
+Car {model='Citroen', year=2018, speed=190}
+Car {model='Ferrari', year=2020, speed=330}
+Car {model='VW', year=2021, speed=250}
+Car {model='Alfa', year=2021, speed=120}
+Car {model='Ferrari', year=2024, speed=300}
+====================
+
+Car {model='Ferrari', year=2024, speed=300}
+Car {model='VW', year=2021, speed=250}
+Car {model='Alfa', year=2021, speed=120}
+Car {model='Ferrari', year=2020, speed=330}
+Car {model='Citroen', year=2018, speed=190}
+Car {model='BMW', year=2000, speed=190}
+====================
+
+Car {model='Ferrari', year=2020, speed=330}
+Car {model='Ferrari', year=2024, speed=300}
+Car {model='VW', year=2021, speed=250}
+Car {model='BMW', year=2000, speed=190}
+Car {model='Citroen', year=2018, speed=190}
+Car {model='Alfa', year=2021, speed=120}
+====================
+
+
+Process finished with exit code 0
