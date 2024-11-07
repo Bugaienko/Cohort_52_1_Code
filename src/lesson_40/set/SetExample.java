@@ -163,7 +163,5 @@ public class SetExample {
         List<String> list = Arrays.asList(words);
         System.out.println(list);
 
-
-
     }
 }
