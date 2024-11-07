@@ -11,6 +11,19 @@ public class MapExample {
 
     public static void main(String[] args) {
 
+        // Конструкторы
+        Map<String, Integer> test = new HashMap<>(); // Создает пустой список. 16 корзин. Коэффициент загрузки 0.75 (12 элементов)
+       test = new HashMap<>(32); // Создает пустой список. 32 корзин. Коэффициент загрузки 0.75 (24 элементов)
+       test = new HashMap<>(32,0.90f); // Создает пустой список. 32 корзин. Коэффициент загрузки 0.90 (29 элементов)
+        Map<String, Integer> otherMap = new HashMap<>();
+        otherMap.put("a", 1);
+        otherMap.put("b", 2);
+       test = new HashMap<>(otherMap); // Создается новая карта. Конструктор принимает другую map - копирует из нее все пары ключ-значение
+        System.out.println(test);
+
+        System.out.println("\n====================\n");
+
+
 
         List<String> strings = new ArrayList<>();
         System.out.println(strings.add("Hello"));
@@ -59,13 +72,30 @@ public class MapExample {
         System.out.println("map.containsValue(\"Orange\"): " + map.containsValue("Orange")); // такой значение нет - false
         System.out.println("map.containsValue(\"NoValue\"): " + map.containsValue("NoValue")); // такой значение нет - false
 
+        System.out.println("\n =========Получение значений по ключу ============");
         System.out.println(map);
-        System.out.println("\n ================ \n");
 
-        // get(Object key) - возвращает значение по ключу. Если ключа нет - вернет null
+        // V get(Object key) - возвращает значение по ключу. Если ключа нет - вернет null
         String value = map.get(3);
         System.out.println("map.get(3): " + value);
         System.out.println("map.get(100): " + map.get(100)); // ключа нет - вернет null
+
+        // V getOrDefault(Object key, V defaultValue) - возвращает значение по ключу. Если ключа нет - вернет defaultValue
+        value = map.getOrDefault(3, "Default"); // ключ есть - вернет значение
+        System.out.println("map.getOrDefault(3, \"Default\"): "  + value);
+        value = map.getOrDefault(100, "Default"); // ключа нет, вернет "Default"
+        System.out.println("map.getOrDefault(100, \"Default\"): "  + value);
+
+        System.out.println("\n =========Удаление пары ключ-значение по ключу ============");
+        System.out.println(map);
+        // V remove(Object key) - Удаляет пару ключ значение. Возвращает значение или null
+        System.out.println("map.remove(100): " + map.remove(100)); // Ключа нет. Ничего не удалит. Вернет null
+        System.out.println("map.remove(4): " + map.remove(4)); // Ключ есть. Удалит пару ключ-значение. Вернет значение, которое было у ключа
+
+        map.put(-1000, "Minus");
+        // В качестве ключа допустимо использовать null
+        map.put(null, "NullValue");
+        System.out.println(map);
 
 
 
