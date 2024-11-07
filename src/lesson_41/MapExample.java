@@ -56,8 +56,8 @@ public class MapExample {
         System.out.println("map.containsKey(8): " + map.containsKey(8)); // такого ключа нет - false
         System.out.println("map.containsKey(1): " + map.containsKey(1)); // такой есть - вернется true
         System.out.println("map.containsValue(\"Java\"): " + map.containsValue("Java")); // такой значение есть - true
-        System.out.println("map.containsValue(\"Orange\"): " + map.containsValue("Orange")); // такой значение есть - true
-        System.out.println("map.containsValue(\"NoValue\"): " + map.containsValue("NoValue")); // такой значение есть - true
+        System.out.println("map.containsValue(\"Orange\"): " + map.containsValue("Orange")); // такой значение нет - false
+        System.out.println("map.containsValue(\"NoValue\"): " + map.containsValue("NoValue")); // такой значение нет - false
 
         System.out.println(map);
         System.out.println("\n ================ \n");
