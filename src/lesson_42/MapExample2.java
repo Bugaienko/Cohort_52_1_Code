@@ -111,6 +111,27 @@ public class MapExample2 {
 
         System.out.println(mapColors);
 
+        mapColors.put(10, "red"); // put- если ключа нет - создается новая пара ключ-значение - вернет null
+        mapColors.put(10, "yellow"); // put - если ключ уже есть - значение для этого ключа будет заменено (перезаписано) - вернет старое значение
+
+        // V replace vs put
+        mapColors.replace(11, "blue"); // replace - если ключа нет - НЕ создается новая пара ключ-значение - вернет null
+        mapColors.replace(10, "purple"); // replace - если ключ уже есть - значение для этого ключа будет заменено (перезаписано) - вернет старое значение
+
+
+        System.out.println(mapColors);
+
+        // Перебор всех пар ключ-значение "в функциональном стиле". Есть возможность применить какую-то функцию к ним
+        mapColors.forEach((key, val) -> System.out.println("key: " + key + ", value: " + val));
+
+        System.out.println("=====================\n");
+
+        mapColors.forEach((k, v) -> {
+            System.out.println("Iteration:");
+            System.out.println("key: " + k + ", value: " + v);
+            System.out.println("====================\n");
+        });
+
 
 
 
