@@ -76,6 +76,45 @@ public class MapExample2 {
 
         // Todo Entry + replace
 
+        // Map.Entry<K, V> - представляет собой пары ключ-значение.
+        /*
+        K getKey()
+        V getValue()
+        V setValue(V value) - заменяет значение, возвращает старое
+
+         */
+
+        // Set<Map.Entry<K, V>> entrySet - возвращает set вхождений всех пар ключ-значение
+        // Тоже "живая" связь с картой.
+
+        System.out.println(mapColors);
+
+
+
+        System.out.println("\n===================\n");
+
+        Set<Map.Entry<Integer, String>> entrySet = mapColors.entrySet();
+        System.out.println("entrySet(): " + entrySet);
+
+        System.out.println("\n===============\n");
+
+        for (Map.Entry<Integer, String> entry : mapColors.entrySet()) {
+            System.out.print("entry.getKey(): " + entry.getKey());
+            System.out.print(" -> ");
+            System.out.println("entry.getValue(): " + entry.getValue());
+            if (entry.getKey().equals(8)) {
+                entry.setValue("JAVA!");
+            }
+        }
+
+        System.out.println("\n===================\n");
+
+        System.out.println(mapColors);
+
+
+
+
+
 
 
 
