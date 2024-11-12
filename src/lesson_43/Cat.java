@@ -49,4 +49,5 @@ public class Cat {
     public void setColor(String color) {
         this.color = color;
     }
+
 }
