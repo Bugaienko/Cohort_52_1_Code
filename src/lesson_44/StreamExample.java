@@ -2,9 +2,7 @@ package lesson_44;
 
 import lesson_43.Cat;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -16,6 +14,8 @@ import java.util.stream.Stream;
 public class StreamExample {
 
     public static void main(String[] args) {
+
+
         /*
         Stream api - мощный инструмент, позволяющий обрабатывать наборы данных в декларативном стиле.
 
@@ -53,22 +53,75 @@ public class StreamExample {
         в том числе в другой тип данных
 
         distinct() - удаляет дубликаты из потока. Сравниваем (определяет равенство) методом equals()
+
+        void peek(Consumer<T> action) - выполняет действие для каждого элемента потока
          */
 
         /*
         Терминальные методы
         R collect(Collector<T, A, R> collector) - преобразует элементы потока в разные типы коллекции или другие структуры данных
+
+        void forEach(Consumer<T? action) - выполняет заданное действия для каждого элемента потока
+
+        Optional<T> min(Comparator<T> comparator) - элемент с минимальным значением в соответствии с компаратором
+        Optional<T> max(Comparator<T> comparator) - элемент с максимальным значением в соответствии с компаратором
+
          */
 
-       // task1();
-       // task2();
+        // task1();
+        // task2();
 //        task3();
 
 //        task4();
 //        task5();
 //        task6();
-            task7();
+//        task7();
+//        task8();
+//            task9();
+            task10();
 
+    }
+
+    private static void task10() {
+        // min, max, Optional
+    }
+
+    private static void task9() {
+        // Создание стрима map
+        Map<String, Integer> map = new HashMap<>();
+        map.put("Apple", 1);
+        map.put("Banana", 5);
+        map.put("Cherry", 0);
+
+        // Создание стрима из элементов entrySet
+        map.entrySet().stream()
+                .filter(entry -> entry.getValue() > 0)
+                .forEach(entry -> System.out.println(entry.getKey() +": " + entry.getValue()));
+    }
+
+    private static void task8() {
+        // Мультикурсор Alt + Shift + click | Mac Opt + Shift + click
+        Cat cat = new Cat("Bear", 5, "braun");
+        Cat cat1 = new Cat("Python", 7, "green");
+        Cat cat2 = new Cat("Tiger", 3, "gray");
+        Cat cat3 = new Cat("Panda", 4, "black");
+
+        Cat[] cats = new Cat[] {cat, cat1, null, cat2, cat3, new Cat(null, 10, "red")};
+
+        // Получить список кошек, вес которых больше 4
+
+
+
+        // получить поток из элементов массива
+        List<Cat> bigCats = Arrays.stream(cats)
+//                .filter(c -> c != null) // оставить только не null
+//                .filter(c -> Objects.nonNull(c)) // оставить только ne null
+                .filter(Objects::nonNull)
+                .filter(c -> Objects.nonNull(c.getName())) // проверка какого-то поля на null (для примера)
+                .filter(c -> c.getWeight() > 4)
+                .collect(Collectors.toList());
+
+        System.out.println(bigCats);
 
     }
 
@@ -78,6 +131,15 @@ public class StreamExample {
 
         List<Cat> cats = getListCats();
 
+        Stream<Cat> catStream = cats.stream()
+                .filter(cat -> cat.getWeight() < 5) // фильтруем котиков
+                .peek(cat -> cat.setName("Slim_" + cat.getName())) // промежуточный метод, выполняет действие для каждого элемента
+                .peek(System.out::println);
+
+
+        catStream.forEach(cat -> System.out.println(cat)); // терминальный метод, выполняет действие для каждого элемента
+//        catStream.forEach(System.out::println);
+        System.out.println("cats: " + cats);
 
     }
 
@@ -99,7 +161,7 @@ public class StreamExample {
         System.out.println("\n =================== \n");
 
         List<String> catNames2 = cats.stream()
-               // .map(cat -> cat.getName()) // тоже самое
+                // .map(cat -> cat.getName()) // тоже самое
                 .map(Cat::getName)
                 .filter(name -> name.length() < 6)
                 .collect(Collectors.toList());
@@ -108,8 +170,6 @@ public class StreamExample {
         /*
         Читаемость, понимание кода
          */
-
-
 
 
     }
@@ -148,10 +208,8 @@ public class StreamExample {
                 .collect(Collectors.toList());
 
         System.out.println(catNames);
-       // Изначальная коллекция не изменяется
-       //  System.out.println(cats);
-
-
+        // Изначальная коллекция не изменяется
+        //  System.out.println(cats);
 
 
     }
@@ -183,14 +241,12 @@ public class StreamExample {
         // fatCats = catStream.filter(c -> c.getWeight() > 5).collect(Collectors.toList()); - будет исключение (ошибка)
 
 
-
         System.out.println(fatCats);
-
 
 
     }
 
-    private static List<Cat> getListCats(){
+    private static List<Cat> getListCats() {
         return List.of(
                 new Cat("Bear", 5, "braun"),
                 new Cat("Python", 7, "green"),
@@ -213,7 +269,7 @@ public class StreamExample {
         System.out.println(result);
 
         // У всех коллекций есть метод stream() создающий поток из элементов коллекции
-        List<Integer> integerList =  integers.stream() // создание потока на основе элементов списка
+        List<Integer> integerList = integers.stream() // создание потока на основе элементов списка
                 .filter(i -> i > 0) // фильтрация элементов потока
                 .sorted() // сортировка элементов в естественном порядке
                 .collect(Collectors.toList()); // собирает элементы потока в коллекцию List
@@ -222,8 +278,6 @@ public class StreamExample {
 
         //Pipeline
         // integers.stream().filter(i -> i > 0).sorted().collect(Collectors.toList());
-
-
 
 
     }
