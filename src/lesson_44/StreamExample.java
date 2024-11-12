@@ -104,9 +104,9 @@ public class StreamExample {
         int[] ints = new int[]{1, 2, 3, 4, 5, 6};
 
         List<Integer> integers = Arrays.stream(ints)
-                .boxed()
+//                .boxed()
                 // автоупаковка
-//                .mapToObj(i -> i)
+                .mapToObj(i -> i)
 //                .mapToObj(i -> Integer.valueOf(i))
                 .collect(Collectors.toList());
         System.out.println(integers);
