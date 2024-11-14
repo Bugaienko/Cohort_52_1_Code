@@ -91,7 +91,7 @@ public class UserValidator2 {
 
         }
 
-       System.out.printf("%s | %s | %s | %s\n", isDigit, isUpperCase, isLowerCase, isSpecialSymbol);
+//       System.out.printf("%s | %s | %s | %s\n", isDigit, isUpperCase, isLowerCase, isSpecialSymbol);
 
         String errorMessage = "Errors! should be a: ";
         int initLength = errorMessage.length();
