@@ -115,6 +115,7 @@ public class MyArrayList<T> implements MyList<T>, Iterable<T> {
             return array[index];
         }
         // Написать код, если индекс "не корректный"
+//        throw new IndexOutOfBoundsException();
         return null; //
 
     }
